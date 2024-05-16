@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<header>
+<header id="header">
         <a href="#" class="logo">Apskati Latviju</a>
         <div id="laba">
         <nav>
@@ -25,21 +25,20 @@
         <div id="menubar" class="fas fa-bars"></div>
 
 
-
     <body id='body'>
-    <label class="switch">
-  <input type="checkbox">
-  <span class="slider" onclick="Krasas();"></span>
-</label>
-</body>
-</div>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider" onclick="Krasas();"></span>
+        </label>
+    </body>
 
-
-    </header>
+    <i class="fas fa-sign-in" id="login"></i>
+    </div>
+</header>
 
     <section id="sakums">
         <div class="content">
-            <h2>Latvijas brīnišķīgākie un plašākie ceļojumi ir atrodami šeit!</h2>
+            <h2>LATVIJAS BRĪNIŠĶĪGĀKIE UN PLAŠĀKIE CEĻOJUMI IR ATRODAMI ŠEIT!</h2>
             <p>Sākot ar šo gadu, jebkuram ceļojumu entuziastam būs pieejams ceļojumu klāsts ar dažādiem atrakciju un jautrību pilniem veidiem, piesakieties pie dotajiem ceļojumiem. <br><b>mēs jūs gaidīsim drīzumā!</b></p>
         </div>
         <div class="image">
@@ -84,19 +83,19 @@
 
     <section id="parmums">
             <div class="icon">  
-            <h3>Tālrunis</h3>
+            <h3>Tālrunis <i class="fas fa-phone"></i></h3>
             <p>+371 27 832 221</p>
             <p>+371 28 001 924</p>
             </div>
 
             <div class="icon">  
-            <h3>E-pasts</h3>
+            <h3>E-pasts <i class="fas fa-envelope"></i></h3>
             <p>kudumsendijs@gmail.com</p>
             <p>ulfsssiksna@gmail.com</p>
             </div>
 
             <div class="icon">  
-            <h3>Adrese</h3>
+            <h3>Adrese <i class="fas fa-home"></i></h3>
             <p>Latvija, Liepaja, Lauku iela 33</p>
             <p></p>
             </div>

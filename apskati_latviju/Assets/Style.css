@@ -69,12 +69,16 @@ header{
 }
 
 .logo:hover{
-    background: white;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color:var(--main-color);
 }
+
+nav{
+margin-right:5rem;
+}
+
 
 nav a{
     font-size: 1.7rem;
@@ -122,14 +126,15 @@ nav a:hover{
     font-size: 2.5rem;
     padding: 1rem 1.3rem;
     border-radius: var(--radius);
-    color: var(--main-color);
-    background-color: var(--bg);
+    color: white;
+    background-color: var(--main-color);
     display: none;
+    margin: 0 2rem;
 }
 
 #menubar:hover{
-    color: white;
-    background-color: var(--main-color);
+    color: var(--main-color);
+    background-color: var(--bg);
 }
 
 /* BACKGROUND KRASU NOMAINAS VIETA*/
@@ -191,6 +196,25 @@ nav a:hover{
   }
   /*BEIGAS BACKGROUND KRASU NOMAINAI*/
 
+#header i{
+    background-color:var(--main-color);
+    border-radius:30%;
+    height:4rem;
+    width:5rem;   
+    cursor:pointer;
+    font-size:3rem;
+    margin-left: 2.5rem;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+  
+
+ #header i:hover{
+background-color:var(--bg);
+color:#777;
+ }
+
 #sakums{
     display: flex;
     align-items: center;
@@ -221,13 +245,11 @@ nav a:hover{
 
 #sakums .content h2{
     font-size: 3rem;
-    color: var(--black);
     line-height: 2;
 }
 
 #sakums .content p{
     font-size: 1.5rem;
-    color: var(--light-color);
     line-height: 2;
     padding: 1rem 0;
 }
@@ -257,19 +279,20 @@ nav a:hover{
 animation: 
 }
 */
+#celojumi .box h3{
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    border-bottom: 0.5rem solid var(--main-color);
+    text-transform: uppercase;
+}
+
 #celojumi .box img{
     width: 100%;
     height: 30rem;
-}
-
-#celojumi .box h3{
-    color: var(--black);
-    font-size: 2.5rem;
-    padding-top: 1.5rem;
+    border-radius:50% 50% 5% 5%;
 }
 
 #celojumi .box p{
-    color: var(--black);
     font-size: 1.5rem;
     padding: 1rem 0;
     line-height: 2;
@@ -278,7 +301,18 @@ animation:
 }
 
 
-
+#parmums{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 10rem;
+    background-image: linear-gradient(to top, #fff 20% ,var(--bg)70%);
+    position: relative;
+    border-radius: 10rem 10rem 0 0;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    justify-content: space-around;
+}
 
 
 
@@ -295,7 +329,7 @@ animation:
     }
 
     #sakums .image img{
-max-width:80%;
+        max-width:80%;
     }
 
     nav{
