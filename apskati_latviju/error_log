@@ -1,0 +1,29 @@
+[07-May-2024 11:58:39 Europe/Riga] PHP Notice:  Undefined variable: specialitatesSQL in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 11:58:39 Europe/Riga] PHP Warning:  mysqli_query(): Empty query in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 11:58:39 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 45
+[07-May-2024 11:58:39 Europe/Riga] PHP Notice:  Undefined variable: specialitatesSQL in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 11:58:39 Europe/Riga] PHP Warning:  mysqli_query(): Empty query in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 11:58:39 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 45
+[07-May-2024 12:00:14 Europe/Riga] PHP Notice:  Undefined variable: specialitatesSQL in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 12:00:14 Europe/Riga] PHP Warning:  mysqli_query(): Empty query in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 12:00:14 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 45
+[07-May-2024 12:00:14 Europe/Riga] PHP Notice:  Undefined variable: specialitatesSQL in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 12:00:14 Europe/Riga] PHP Warning:  mysqli_query(): Empty query in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 12:00:14 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 45
+[07-May-2024 12:00:25 Europe/Riga] PHP Notice:  Undefined variable: specialitatesSQL in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 12:00:25 Europe/Riga] PHP Warning:  mysqli_query(): Empty query in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 12:00:25 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 45
+[07-May-2024 12:04:07 Europe/Riga] PHP Notice:  Undefined variable: specialitatesSQL in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 12:04:07 Europe/Riga] PHP Warning:  mysqli_query(): Empty query in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 12:04:07 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 45
+[07-May-2024 12:04:08 Europe/Riga] PHP Notice:  Undefined variable: specialitatesSQL in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 12:04:08 Europe/Riga] PHP Warning:  mysqli_query(): Empty query in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 43
+[07-May-2024 12:04:08 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 45
+[07-May-2024 12:13:53 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 50
+[07-May-2024 12:16:55 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 50
+[07-May-2024 12:16:57 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 50
+[07-May-2024 12:18:24 Europe/Riga] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 59
+[07-May-2024 12:18:39 Europe/Riga] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 59
+[07-May-2024 12:18:40 Europe/Riga] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 59
+[07-May-2024 12:18:41 Europe/Riga] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 59
+[07-May-2024 12:18:41 Europe/Riga] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 59

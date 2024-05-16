@@ -14,20 +14,33 @@
 
 <header>
         <a href="#" class="logo">Apskati Latviju</a>
+        <div id="laba">
         <nav>
             <a href="#">Sākumlapa</a>
-            <a href="#Celojumi">Piedāvātie ceļojumi</a>
-            <a href="#Parmums">Par mums</a>
+            <a href="#celojumi">Piedāvātie ceļojumi</a>
+            <a href="#parmums">Par mums</a>
             <!-- <a href="iestatijumi">Iestatījumi</a>
             <a href="admin-panelis">Admin-panelis</a> -->
         </nav>
         <div id="menubar" class="fas fa-bars"></div>
+
+
+
+    <body id='body'>
+    <label class="switch">
+  <input type="checkbox">
+  <span class="slider" onclick="Krasas();"></span>
+</label>
+</body>
+</div>
+
+
     </header>
 
     <section id="sakums">
         <div class="content">
             <h2>Latvijas brīnišķīgākie un plašākie ceļojumi ir atrodami šeit!</h2>
-            <p>Sākot ar šo gadu, jebkuram ceļojumu entuziastam būs pieejams ceļojumu klāsts ar dažādiem atrakciju un jautrību pilniem veidiem, piesakieties pie dotajiem ceļojumiem un <b>mēs jūs gaidīsim drīzumā!</b></p>
+            <p>Sākot ar šo gadu, jebkuram ceļojumu entuziastam būs pieejams ceļojumu klāsts ar dažādiem atrakciju un jautrību pilniem veidiem, piesakieties pie dotajiem ceļojumiem. <br><b>mēs jūs gaidīsim drīzumā!</b></p>
         </div>
         <div class="image">
             <img src="Images/destination1.jpg" alt="">
@@ -52,8 +65,8 @@
                     while($Popcelojums = mysqli_fetch_assoc($atlasaPopCelojumus)){
                         echo "
                         <div class='box'> 
+                        <h3>{$Popcelojums['Nosaukums']}</h3>
                             <img src='{$Popcelojums['Attels_URL']}'>
-                            <h3>{$Popcelojums['Nosaukums']}</h3>
                             <p>{$Popcelojums['Apraksts']}</p>
                             <form method='post' action='pieteikums.php'>
                                 <button type='submit' class='btn' name='pieteikties' value='{$Popcelojums['Nosaukums']}'>
@@ -69,7 +82,7 @@
     </section>
 
 
-    <section id="Parmums">
+    <section id="parmums">
             <div class="icon">  
             <h3>Tālrunis</h3>
             <p>+371 27 832 221</p>

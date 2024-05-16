@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300;600&display=swap');
+
+:root{
+    --main-color: #6e8ae8;
+    --black: #555;
+    --light-color: #777;
+    --bg: #e9f3fc;
+    --border: .1rem solid rgba(0,0,0,10%);
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,10%);
+    --radius: .5rem;
+}
+
+*{
+    font-family: 'Nunito',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    transition: all .3s ease-out;
+}
+
+*::selection{
+    background: var(--main-color);
+    color: #fff;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+    font-size: 60%;
+}
