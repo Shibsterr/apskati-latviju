@@ -37,7 +37,6 @@ h1{
     text-align:center;
     padding-bottom: 3rem;
     font-size: 4rem;
-    color:var(--black);
 }
 
 h1 span{
@@ -66,6 +65,8 @@ header{
     color: var(--main-color);
     font-weight: bold;
     font-family:serif;
+   display: flex;
+    align-items: center;
 }
 
 .logo:hover{
@@ -196,24 +197,129 @@ nav a:hover{
   }
   /*BEIGAS BACKGROUND KRASU NOMAINAI*/
 
-#header i{
-    background-color:var(--main-color);
-    border-radius:30%;
+
+
+
+  /*LOGIN*/
+
+#header img{
     height:4rem;
-    width:5rem;   
+    width:4rem;
+    object-fit: cover;
+}
+
+#header .open-button i{
+    background-color:var(--main-color);
+    border-radius:50% 30% 0 30%;
+    height:10rem;
+    width:10rem;   
     cursor:pointer;
     font-size:3rem;
     margin-left: 2.5rem;
     display:flex;
     align-items:center;
     justify-content: center;
+    border:0.2rem solid black;
 }
   
 
- #header i:hover{
-background-color:var(--bg);
-color:#777;
+#header .open-button i:hover{
+    background-color:var(--bg);
  }
+
+ .open-button {
+    background: none;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 20px;
+    margin-right:7.3rem;
+    margin-bottom:-4.8rem;
+    max-width:30px;
+    max-inline-size:2rem;
+  }
+  
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    animation: popout 1s ease;
+    -webkit-animation: popout 1s ease;
+  }
+
+@keyframes popout {
+    from{ right:-200px; bottom: -200px; transform:scale(0) }
+    to{right:0px; bottom: 0px;transform:scale(1)}
+}
+@-webkit-keyframes popout {
+    from{right:-200px; bottom: -200px;-webkit-transform:scale(0)}
+    to{right:0px; bottom: 0px;-webkit-transform:scale(1)}
+}
+
+  .form-popup label{
+    font-size:1.5rem;
+  }
+  
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  .form-container .btn {
+    background-color: #1aa726;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  .form-container .cancel{
+    font-size:2rem;
+    font-weight: bold;
+    width:3rem;
+    align-items: center;
+    cursor:pointer;
+    border-radius:40%;
+    background-color:white;
+    background-color: rgb(255, 154, 154);
+  }
+
+  .form-container .cancel:hover{
+    background-color: rgb(255, 0, 0);
+  }
+
+
+  
+
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+/*LOGIN BEIGAS*/
 
 #sakums{
     display: flex;
@@ -241,6 +347,7 @@ color:#777;
     position: relative;
     z-index: 2;
     border-radius: 40rem 0rem;
+    display:inline-block;
 }
 
 #sakums .content h2{
@@ -256,13 +363,25 @@ color:#777;
 
 .box-container{
     display: grid;
+    grid-column:3;
     /* 1fr - aizņemts visu iespējamo vietu */
     /* grid-template-columns: auto auto auto;
     grid-template-columns: repeat(3,1fr); */
     /* grid-template-columns: repeat("auto-fit", minmax(40rem,1fr)); */
-    grid-template-columns: repeat(3,1fr);
     gap: 1.3rem;
-   
+    grid-template-columns: repeat(auto-fit, minmax(30rem,45rem));
+    justify-content: space-around;
+}
+
+#celojumi .virsraksts{
+    margin:5rem 0;
+    text-align:center;
+    color:white;
+  font-weight: bold;
+  font-size:5rem;
+  background-color:var(--main-color);
+  width:100%;
+  border-radius:1rem;
 }
 
 #celojumi .box{
@@ -270,8 +389,7 @@ color:#777;
     border: var(--border);
     box-shadow: var(--box-shadow);
     border-radius: var(--radius);
-    padding: 4rem 2rem;
-   
+    padding: 0 2rem;
 }
 
 /*
@@ -284,6 +402,7 @@ animation:
     margin-bottom: 3rem;
     border-bottom: 0.5rem solid var(--main-color);
     text-transform: uppercase;
+    padding-top:2rem;
 }
 
 #celojumi .box img{
@@ -292,7 +411,7 @@ animation:
     border-radius:50% 50% 5% 5%;
 }
 
-#celojumi .box p{
+#celojumi .box .teksts{
     font-size: 1.5rem;
     padding: 1rem 0;
     line-height: 2;
@@ -300,20 +419,76 @@ animation:
     max-height: 20rem;
 }
 
-
-#parmums{
+#celojumi .box .ratings{
+    font-weight:bold;
     display: flex;
+    justify-content: space-between;
+    color:white;
+    padding-bottom:2rem;
+}
+
+#celojumi .box .ratings div{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    font-size:1.1rem;
+   
+}
+
+#celojumi .box .ratings .patik{
+background-color: #23a52e;
+border-radius:.5rem 0 0 .5rem;
+margin:1rem 0;
+width:5rem;
+padding:1.1rem 0;
+box-shadow:var(--box-shadow);
+}
+    #celojumi .box .ratings .nepatik{
+        background-color:rgb(175, 41, 41);
+        border-radius:0 .5rem .5rem 0;
+        margin:1rem 0;
+        width:5rem;
+        padding:1.1rem 0;
+        box-shadow:var(--box-shadow);
+    }
+#celojumi .btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: #fff;
+    background: var(--main-color);
+    border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    z-index: 2;
+    width:30rem;
+}
+
+#celojumi .btn:hover{
+    background-color: var(--black);
+}
+
+
+#parmums {
+
     padding-top: 10rem;
     background-image: linear-gradient(to top, #fff 20% ,var(--bg)70%);
     position: relative;
     border-radius: 10rem 10rem 0 0;
-    text-align: center;
     box-shadow: var(--box-shadow);
-    justify-content: space-around;
+    padding:1rem;
 }
 
+#parmums .Par{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:2rem;
+}
 
 
 
@@ -329,7 +504,7 @@ animation:
     }
 
     #sakums .image img{
-        max-width:80%;
+max-width:80%;
     }
 
     nav{

@@ -1,4 +1,8 @@
 <!-- https://kristovskis.lv/3pt1/kudums/apskati_latviju/ -->
+<?php
+        require "Assets/db.php";
+?>
+
 <!DOCTYPE html>
 <html lang="lv">
 <head>
@@ -6,33 +10,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apskati Latviju</title>
     <link rel="stylesheet" href="Assets/Style.css">
-    <link rel="shortcut icon" href="Images/Latvijalogo.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="Images/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="Assets/Script.js" defer></script>
 </head>
 <body>
 
 <header id="header">
-        <a href="#" class="logo">Apskati Latviju</a>
+        <a href="#" class="logo"><img src="Images/Logo.png" alt=""></img>Apskati Latviju</a>
         <div id="laba">
         <nav>
             <a href="#">Sākumlapa</a>
             <a href="#celojumi">Piedāvātie ceļojumi</a>
             <a href="#parmums">Par mums</a>
-            <!-- <a href="iestatijumi">Iestatījumi</a>
-            <a href="admin-panelis">Admin-panelis</a> -->
+            <!-- <?php
+            // if($_SESSION['lietotajvards_GG69']){
+            //     echo "<a href='iestatijumi'>Iestatījumi</a>";
+            //     echo "<a href='admin-panelis'>Admin panelis</a>";
+            // }
+            ?> -->
         </nav>
         <div id="menubar" class="fas fa-bars"></div>
 
 
     <body id='body'>
-        <label class="switch">
-        <input type="checkbox">
-        <span class="slider" onclick="Krasas();"></span>
-        </label>
-    </body>
+    <label class="switch">
+  <input type="checkbox">
+  <span class="slider" onclick="Krasas();"></span>
+</label>
+</body>
 
-    <i class="fas fa-sign-in" id="login"></i>
+
+
+<button class="open-button" onclick="openForm()"><i class="fas fa-sign-in" id="login"></i></button>
+
+<!-- The form -->
+<div class="form-popup" id="myForm">
+  <form method="POST" class="form-container" id="loginBG">
+
+  <button type="button" class="cancel" id="Atcelt" onclick="closeForm()"><i class="fas fa-x" id="X"></i></button>
+
+    <h1>Reģistrēties</h1>
+
+    <label for="lietotajvards"><b>Lietotājvārds</b></label>
+    <input type="text" placeholder="Ievadiet lietotajvardu" name="lietotajvards" required>
+
+    <label for="parole"><b>Parole</b></label>
+    <input type="password" placeholder="Ievadiet paroli" name="parole" required>
+
+    <button type="submit" class="btn" name="autorizacija">Pieslēgties</button>
+
+    
+  </form>
+</div>
+
+    
     </div>
 </header>
 
@@ -48,40 +80,51 @@
 
 
     <section id="celojumi">
+        <h3 class="virsraksts">POPULĀRĀKIE!</h3>
     <div class="box-container">
-            <?php
-            //Motormuzejs- https://www.liveriga.com/lv/apmekle/ko-redzet/muzeji-un-galerijas/tehnikas-muzeji/rigas-motormuzejs
-            //Pokaiņu mežš- https://www.mammadaba.lv/galamerki/pokainu-mezs
-            //Rundāles pils- Rundāles pils ansamblis ir izcilākais baroka un rokoko arhitektūras un mākslas piemineklis Latvijā. Pils celta kā Kurzemes hercoga Ernsta Johana Bīrona vasaras rezidence pēc arhitekta Frančesko Rastrelli projekta divos periodos - no 1736. līdz 1740. gadam un no 1764. līdz 1768. gadam. Lielākā daļa interjeru ir radīti no 1765. līdz 1768. gadam, kad pilī strādāja tēlnieks Johans Mihaels Grafs un gleznotāji Frančesko Martīni un Karlo Cuki.
-            //dzintars- “Lielā dzintara” ēka ierakstījusies Liepājas panorāmā kā varens, daudzšķautņains dārgakmens, kas simbolizē mūzikas radīšanas mirkļa skaistumu un vienreizīgumu. Konstrukcijas īpatnības padara būvi unikālu no arhitektoniskā un inženiertehniskā viedokļa – tajā nav taisnu leņķu. Projektējot ēku, izmantots olas čaumalas princips – tas nozīmē, ka pati būves forma garantē konstrukciju stiprību. Kaut arī olas čaumala ir ļoti plāna, forma nodrošina tās izturību un ļauj pretoties ievērojamam spiedienam. Visā ēkā nav divu vienādu logu, lai gan tās fasādi veido stikla konstrukcijas. Ģeometriskā dažādība apzīmē “Lielajā dzintarā” mītošo mūzikas un mākslas daudzveidību. Celtne saules un dzintara oranžajos toņos dzirkstī dienu un nakti. Gaismas simbols gan tiešā, gan pārnestā nozīmē.
-            //purva taka- https://www.latvia.travel/lv/purvi-kurus-verts-apmekletem
     
+
+    
+            <?php
                 require "Assets/db.php";
-                $celojumaSQL = "SELECT * FROM celojuma_celojums LIMIT 6";   //filtrs pec like/dislike ratio
+                $celojumaSQL = "SELECT * FROM celojuma_celojums GROUP BY ID ORDER BY Patik DESC LIMIT 6";   //filtrs pec like/dislike ratio
                 $atlasaPopCelojumus = mysqli_query($savienojums, $celojumaSQL);
 
+
+/*https://codepen.io/vilcu/pen/ZQwdGQ*/
+
+
                 if(mysqli_num_rows($atlasaPopCelojumus) > 0){
+                   
                     while($Popcelojums = mysqli_fetch_assoc($atlasaPopCelojumus)){
                         echo "
                         <div class='box'> 
                         <h3>{$Popcelojums['Nosaukums']}</h3>
                             <img src='{$Popcelojums['Attels_URL']}'>
-                            <p>{$Popcelojums['Apraksts']}</p>
+                            <p class='teksts'>{$Popcelojums['Apraksts']}</p>
+                            <div class='ratings'>
                             <form method='post' action='pieteikums.php'>
                                 <button type='submit' class='btn' name='pieteikties' value='{$Popcelojums['Nosaukums']}'>
                                 Pieteikties</button>
                             </form>
+                            <div>
+                            <p class='patik'>{$Popcelojums['Patik']} <i class='fas fa-thumbs-up'></i></p>
+                            <p class='nepatik'>{$Popcelojums['Nepatik']} <i class='fas fa-thumbs-down'></i></p>
+                            </div>
+                            </div>
                         </div>";
                     }
                 }else{
                     echo "Nav neviena ceļojuma!";
                 }
             ?>
-        </div>
+            
+            </div>
     </section>
 
 
     <section id="parmums">
+        <div class="Par">
             <div class="icon">  
             <h3>Tālrunis <i class="fas fa-phone"></i></h3>
             <p>+371 27 832 221</p>
@@ -99,7 +142,9 @@
             <p>Latvija, Liepaja, Lauku iela 33</p>
             <p></p>
             </div>
+            </div>
+            <footer> Apskati Latviju &copy; 2024 </footer>
     </section>
 
-    <footer> Apskati Latviju &copy; 2024 </footer>
+    
 </body>

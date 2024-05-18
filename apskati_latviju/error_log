@@ -27,3 +27,94 @@
 [07-May-2024 12:18:40 Europe/Riga] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 59
 [07-May-2024 12:18:41 Europe/Riga] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 59
 [07-May-2024 12:18:41 Europe/Riga] PHP Parse error:  syntax error, unexpected 'class' (T_CLASS), expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 59
+[17-May-2024 09:41:03 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 63
+[17-May-2024 09:41:05 Europe/Riga] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 63
+[17-May-2024 10:14:29 Europe/Riga] PHP Warning:  require(../Assets/db.php): failed to open stream: No such file or directory in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 47
+[17-May-2024 10:14:29 Europe/Riga] PHP Fatal error:  require(): Failed opening required '../Assets/db.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 47
+[17-May-2024 10:14:34 Europe/Riga] PHP Warning:  require(../Assets/db.php): failed to open stream: No such file or directory in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 47
+[17-May-2024 10:14:34 Europe/Riga] PHP Fatal error:  require(): Failed opening required '../Assets/db.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 47
+[17-May-2024 10:22:51 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:22:51 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:22:52 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:22:52 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:22:52 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:22:52 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:22:52 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:22:52 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:22:52 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:22:52 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:22:59 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:22:59 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:23:02 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:23:02 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:23:09 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:23:09 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:24:33 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:24:33 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 26
+[17-May-2024 10:32:43 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:32:45 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:32:46 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:32:47 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:32:47 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:32:47 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:32:47 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:32:47 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:32:48 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:32:52 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:32:54 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:33:03 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:33:40 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:33:43 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:33:45 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:33:50 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:33:50 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:33:55 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:34:10 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:35:41 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:35:46 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:36:09 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:36:10 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:36:13 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:36:14 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:36:15 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:36:16 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:36:18 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:36:20 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:36:24 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:36:25 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:36:31 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:37:04 Europe/Riga] PHP Notice:  Undefined index: lietotajvards_GG69 in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 28
+[17-May-2024 10:39:34 Europe/Riga] PHP Notice:  Undefined index: Lietotajvards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 30
+[17-May-2024 10:39:34 Europe/Riga] PHP Notice:  Undefined index: Lietotajvards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 30
+[17-May-2024 10:39:37 Europe/Riga] PHP Notice:  Undefined index: Lietotajvards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 30
+[17-May-2024 10:39:37 Europe/Riga] PHP Notice:  Undefined index: Lietotajvards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 30
+[17-May-2024 10:40:04 Europe/Riga] PHP Notice:  Undefined index: Lietotajvards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 29
+[17-May-2024 10:40:04 Europe/Riga] PHP Notice:  Undefined index: Lietotajvards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 29
+[17-May-2024 10:42:48 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:48 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:49 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:49 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:52 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:52 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:52 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:52 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:53 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:53 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:53 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:53 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:53 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:53 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:53 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:42:53 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:45:16 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:45:16 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:45:19 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:45:19 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:45:20 Europe/Riga] PHP Notice:  Undefined variable: _SESSION in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[17-May-2024 10:45:20 Europe/Riga] PHP Notice:  Trying to access array offset on value of type null in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 27
+[18-May-2024 19:09:42 Europe/Riga] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 119
+[18-May-2024 19:09:44 Europe/Riga] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 119
+[18-May-2024 20:16:28 Europe/Riga] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 112
+[18-May-2024 20:16:29 Europe/Riga] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 112
+[18-May-2024 20:16:30 Europe/Riga] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 112
+[18-May-2024 20:16:30 Europe/Riga] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/index.php on line 112
