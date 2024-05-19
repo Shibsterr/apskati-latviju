@@ -60,14 +60,6 @@ var BGcolors = ["rgb(50,50,50)","white"];
     }
 
 
-/*Popularakie SLIDERIS*/
-$('.box-container').slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1
-  });
-    
-
     /*LOGIN*/
     function openForm() {
         document.getElementById("myForm").style.display = "block";
@@ -82,11 +74,30 @@ $('.box-container').slick({
     }
 
 
-
-
     /*LIETAS KAS JaSALABO
-1. Nav bar kad iezoomojas lai strada
-2.Jaizveido slick slide prieks POPULARAKIE
-3. Reģistrācijas lauka izmeru regulēšana kad zoomojas
-4. Krasu nomainas saglabasana uz LocalStorage
+    1. Nav bar kad iezoomojas lai strada
+    2.Jaizveido slick slide prieks POPULARAKIE
+    3. Reģistrācijas lauka izmeru regulēšana kad zoomojas
+    4. Krasu nomainas saglabasana uz LocalStorage
     */
+
+
+
+
+let slideIndex = 6;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("box2");
+  if (n > slides.length) {slideIndex = 6}    
+  if (n < 6) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+}

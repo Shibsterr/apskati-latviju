@@ -384,7 +384,7 @@ nav a:hover{
   border-radius:1rem;
 }
 
-#celojumi .box{
+#celojumi .box, #celojumi .box2{
     text-align: center;
     border: var(--border);
     box-shadow: var(--box-shadow);
@@ -397,7 +397,7 @@ nav a:hover{
 animation: 
 }
 */
-#celojumi .box h3{
+#celojumi .box h3, #celojumi .box2 h3{
     font-size: 2.5rem;
     margin-bottom: 3rem;
     border-bottom: 0.5rem solid var(--main-color);
@@ -405,13 +405,13 @@ animation:
     padding-top:2rem;
 }
 
-#celojumi .box img{
+#celojumi .box img, #celojumi .box2 img{
     width: 100%;
     height: 30rem;
     border-radius:50% 50% 5% 5%;
 }
 
-#celojumi .box .teksts{
+#celojumi .box .teksts, #celojumi .box2 .teksts{
     font-size: 1.5rem;
     padding: 1rem 0;
     line-height: 2;
@@ -419,7 +419,7 @@ animation:
     max-height: 20rem;
 }
 
-#celojumi .box .ratings{
+#celojumi .box .ratings, #celojumi .box2 .ratings{
     font-weight:bold;
     display: flex;
     justify-content: space-between;
@@ -427,7 +427,7 @@ animation:
     padding-bottom:2rem;
 }
 
-#celojumi .box .ratings div{
+#celojumi .box .ratings div, #celojumi .box2 .ratings div{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -435,7 +435,7 @@ animation:
    
 }
 
-#celojumi .box .ratings .patik{
+#celojumi .box .ratings .patik, #celojumi .box2 .ratings .patik{
 background-color: #23a52e;
 border-radius:.5rem 0 0 .5rem;
 margin:1rem 0;
@@ -443,7 +443,7 @@ width:5rem;
 padding:1.1rem 0;
 box-shadow:var(--box-shadow);
 }
-    #celojumi .box .ratings .nepatik{
+    #celojumi .box .ratings .nepatik, #celojumi .box2 .ratings .nepatik{
         background-color:rgb(175, 41, 41);
         border-radius:0 .5rem .5rem 0;
         margin:1rem 0;
@@ -470,7 +470,6 @@ box-shadow:var(--box-shadow);
     background-color: var(--black);
 }
 
-
 #parmums {
 
     padding-top: 10rem;
@@ -492,6 +491,162 @@ box-shadow:var(--box-shadow);
 
 
 
+/* --------------------------------------------- ADMIN SADAĻA ---------------------------------------------*/
+.current{
+    color: var(--main-color);
+    background-color: var(--bg);
+    padding-bottom:2rem;
+    border-radius: 0 0 0 3rem;
+}
+
+.admin{
+    margin: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(22rem,1fr));
+    gap: 1.5rem;
+}
+
+.admin .info-box{
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--radius);
+    padding: 2rem 0 ;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.info-box span{
+    width: 7rem;
+    height: 7rem;
+    font-size: 3rem;
+    color: var(--main-color);
+    background: var(--bg);
+    border-radius: var(--radius);
+    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-box h3{
+    color: var(--black);
+    padding: 1rem;
+    font-size: 1.7rem;
+}
+
+.info-box p{
+    color: var(--black);
+    font-size: 1.3rem;
+}
+
+.admin .row{
+    margin-top: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.admin .row .info1{
+    flex: 1 1 45rem;
+}
+
+.admin .row .info2{
+    flex: 1 1 20rem;
+}
+
+.head-info{
+    display: flex;
+    justify-content: space-between;
+    background: #f8f8f8;
+    color: var(--black);
+    padding: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.admin .defaultborder{
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--radius);
+}
+
+.head-color{
+    background: var(--bg);
+}
+
+table{
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+th, td{
+    text-align: center;
+    height: 4rem;
+    border-bottom: .5rem solid #ddd;
+}
+
+th{
+    color: var(--black);
+}
+
+tr:hover{
+    background: var(--bg);
+}
+
+.adminTable{
+    font-size: 1.3rem;
+    table-layout: fixed;
+}
+
+.admin .btn{
+    margin: 0;
+    padding: .5rem 1.5rem;
+    font-size: 1.2rem;
+}
+
+.actionbtns{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.add  label{
+    font-size:1.5rem;
+  }
+  
+  .add  {
+    max-width: 200rem;
+    padding: 10px;
+    background-color: white;
+  }
+
+.add input[type=text], .add input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  .add input[type=text]:focus, .add input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  .add .btn {
+    background-color: var(--main-color);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+
+/* ------------------------------------------------------------------------------------------*/
 @media (max-width: 1080px){
     html{
         font-size: 55%;
@@ -533,6 +688,7 @@ max-width:80%;
     }
 }
 
+
 @media (max-width: 875px){
     #sakums .content{
         text-align:center;
@@ -542,3 +698,114 @@ max-width:80%;
         padding: 2rem 4%;
     }
 }
+
+
+
+
+/* SLIDESHOWS */
+.visi {
+    margin: auto;
+  }
+  
+  .box2 {
+    display: none;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color:var(--main-color);
+    display:flex;
+    justify-content: center;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .SLIDI{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+ 
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes slide {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+
+  /*LOADIN ANIMACIJA*/
+  
+.lds-ripple,
+.lds-ripple div {
+  box-sizing: border-box;
+}
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid currentColor;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+  }
+}
+
+/*ANIMACIJA BEIGAS LOADING*/
+
+  

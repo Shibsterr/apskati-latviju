@@ -27,7 +27,7 @@
             while($user = mysqli_fetch_array($result)) {
                 if(password_verify($password, $user['Parole'])) {
                     $_SESSION['lietotajvards_GG69'] = $user['Lietotajvards'];
-                    header("Refresh: 0");
+                    header("Location: Admin/index.php");
                 } else {
                     // echo "Nepareizs lietotājvārds vai parole!";
                 }

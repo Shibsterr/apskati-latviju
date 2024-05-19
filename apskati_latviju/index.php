@@ -1,7 +1,12 @@
 <!-- https://kristovskis.lv/3pt1/kudums/apskati_latviju/ -->
 <?php
+        session_start();
         require "Assets/db.php";
+        if (isset($_POST['autorizacija'])) {
+            $_SESSION['lietotajvards_GG69'] = $_POST['lietotajvards'];
+        }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="lv">
@@ -23,12 +28,12 @@
             <a href="#">Sākumlapa</a>
             <a href="#celojumi">Piedāvātie ceļojumi</a>
             <a href="#parmums">Par mums</a>
-            <!-- <?php
-            // if($_SESSION['lietotajvards_GG69']){
-            //     echo "<a href='iestatijumi'>Iestatījumi</a>";
-            //     echo "<a href='admin-panelis'>Admin panelis</a>";
-            // }
-            ?> -->
+            <?php
+            if(isset($_SESSION['lietotajvards_GG69'])){        
+                echo "<a href='iestatijumi.php'>Iestatījumi</a>";
+                echo "<a href='Admin/index.php'>Admin panelis</a>";
+            }
+            ?>
         </nav>
         <div id="menubar" class="fas fa-bars"></div>
 
@@ -41,6 +46,10 @@
 </body>
 
 
+<?php 
+
+if (!isset($_POST['autorizacija'])) {
+?>
 
 <button class="open-button" onclick="openForm()"><i class="fas fa-sign-in" id="login"></i></button>
 
@@ -60,11 +69,18 @@
 
     <button type="submit" class="btn" name="autorizacija">Pieslēgties</button>
 
-    
+    <?php
+            if(isset($_POST['autorizacija'])) {
+    echo "<div class='lds-ripple'><div>";
+            }
+    ?>
   </form>
 </div>
 
-    
+    <?php
+        }
+    ?>
+
     </div>
 </header>
 
@@ -78,7 +94,7 @@
         </div>
     </section>
 
-
+<!-- ----------------------------------------- POPULĀRĀKIE CEĻOJUMI ----------------------------------------- -->
     <section id="celojumi">
         <h3 class="virsraksts">POPULĀRĀKIE!</h3>
     <div class="box-container">
@@ -87,7 +103,7 @@
     
             <?php
                 require "Assets/db.php";
-                $celojumaSQL = "SELECT * FROM celojuma_celojums GROUP BY ID ORDER BY Patik DESC LIMIT 6";   //filtrs pec like/dislike ratio
+                $celojumaSQL = "SELECT * FROM celojuma_celojums GROUP BY ID ORDER BY Patik DESC LIMIT 3";   //filtrs pec like/dislike ratio
                 $atlasaPopCelojumus = mysqli_query($savienojums, $celojumaSQL);
 
 
@@ -120,9 +136,55 @@
             ?>
             
             </div>
+
+<!-- ----------------------------------------- VISI CEĻOJUMI ----------------------------------------- -->
+<h3 class="virsraksts">VISI CEĻOJUMI!</h3>
+
+<label for="saraksts"><i class="fa-solid fa-filter"></i></label>
+
+<select name="filtrs" id="filtrs">
+<option value="jaun">Jaunākie</option>
+  <option value="Pati">Patīk</option>
+  <option value="Nepa">Nepatīk</option>
+  <option value="Naug">A-Z</option>
+  <option value="Ndils">Z-A</option>
+</select>
+
+<div class="SLIDI">
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <div class="visi">
+        <?php
+        $celojumaSQL = "SELECT * FROM celojuma_celojums GROUP BY ID DESC";
+        $atlasaVisusCelojumus = mysqli_query($savienojums, $celojumaSQL);
+
+        if(mysqli_num_rows($atlasaVisusCelojumus) > 0){
+            while($celojums = mysqli_fetch_assoc($atlasaVisusCelojumus)){
+                echo "
+                <div class='box2 slide'>
+                <h3>{$celojums['Nosaukums']}</h3>
+                    <img src='{$celojums['Attels_URL']}'>
+                        <p class=teksts>{$celojums['Apraksts']}</p>
+                        <div class='ratings'>
+                        <form method='post' action='pieteikums.php'>
+                            <button type='submit' class='btn' name='pieteikties' value='{$Popcelojums['Nosaukums']}'>
+                            Pieteikties</button>
+                        </form>
+                        <div>
+                        <p class='patik'>{$Popcelojums['Patik']} <i class='fas fa-thumbs-up'></i></p>
+                        <p class='nepatik'>{$Popcelojums['Nepatik']} <i class='fas fa-thumbs-down'></i></p>
+                        </div>
+                        </div>
+                    </div>";
+            }
+        } else {
+            echo "Nav neviena ceļojuma!";
+        }
+        ?>
+    </div>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
     </section>
-
-
+<!----------------------------------------------PAR MUMS----------------------------------------------->
     <section id="parmums">
         <div class="Par">
             <div class="icon">  
@@ -145,6 +207,5 @@
             </div>
             <footer> Apskati Latviju &copy; 2024 </footer>
     </section>
-
     
 </body>
