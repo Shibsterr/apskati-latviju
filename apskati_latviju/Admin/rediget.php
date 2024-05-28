@@ -2,19 +2,18 @@
     $page = 'pievienot';
     require "header.php";
     require '../Assets/db.php';
-
     // if (!isset($_SESSION['lietotajvards_GG69']) || $_SESSION['lietotajvards_GG69']['Status'] !== 'Administrators') {
     //     header("Location: pievienot.php");
     //     exit;
     // }
-
     $statusOptions = array("Moderators", "Administrators");
 
-    if(isset($_POST['submit'])) {
+    if(isset($_POST['edit'])) {
         $username = mysqli_real_escape_string($savienojums, $_POST['username']);
         $password = mysqli_real_escape_string($savienojums, $_POST['password']);
         $confirmPassword = mysqli_real_escape_string($savienojums, $_POST['confirm_password']);
         $status = mysqli_real_escape_string($savienojums, $_POST['status']);
+        $id = $_POST['rediget'];
 
 
         if ($password !== $confirmPassword) {
@@ -23,19 +22,21 @@
 
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            $insertUserSQL = "INSERT INTO celojuma_lietotaji (Vards, Parole, Status) VALUES ('$username', '$hashedPassword', '$status')";
-            $sql_teikuma_izpilde = mysqli_query($savienojums,$insertUserSQL);
+            $insertUserSQL = 
+            "UPDATE celojuma_lietotaji SET Vards = '$username', Parole = '$hashedPassword', Status = '$status' WHERE Lietotaja_ID = $id";
             header("Location: ../Admin/pievienot.php");
             exit();
         }
     }
+
+    
+
 ?>
 
 <section class="admin">
     <div class="row">
         <div class="info1 defaultborder">
-            <div class="head-info head-color">Pievienošana:</div>
-
+            <div class="head-info head-color">Rediģēšana:</div>
             <form method="POST" class="add">
                 <label for="username">Lietotājvārds:</label>
                 <input type="text" id="username" name="username" required>
@@ -54,7 +55,7 @@
                     <?php endforeach; ?>
                 </select>
 
-                <button class="btn" type="submit" name="submit">Pievienot lietotāju</button>
+                <button class="btn" type="submit" name="edit">Rediģēt lietotāju</button>
             </form>
         </div>
     </div>

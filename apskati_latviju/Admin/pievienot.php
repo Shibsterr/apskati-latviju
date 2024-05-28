@@ -34,7 +34,9 @@
                             <form method='POST' action='rediget.php'>
                                 <button type='submit' name='rediget' class='btn' value='{$piet['Lietotaja_ID']}'><i class='fas fa-edit'></i></button>
                             </form>
-                            <button type='submit' name='delete' class='btn' value='{$piet['Lietotaja_ID']}'><i class='fas fa-trash'></i></button>
+                            <form method='POST'>
+                                <button type='submit' name='delete' class='btn' value='{$piet['Lietotaja_ID']}' onclick='return confirm('Vai tiešām vēlies dzēst?')'><i class='fas fa-trash'></i></button>
+                            </form>
                             </div>
                         </td>
                         </tr>
