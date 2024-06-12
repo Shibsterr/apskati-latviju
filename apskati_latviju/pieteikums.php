@@ -93,16 +93,22 @@ require "Assets/header.php";
     ?>
 <!-- php -->
 
-<form method="post">
+<form method="post" id="pieci">
 <h1>Pieteikšanās</h1>
 <div class="inputs">
+    <div>
+    <div>
     <label for="">Vārds</label><input type="text" name="vards" class="box" required>
+    </div>
+    <div>
     <label for="">Uzvārds</label><input type="text" name="dzimDati" class="box" required>
+    </div>
+    <div>
     <label for="">Tālrunis</label><input type="tel" name="talrunis" class="box" required>
-    <label for="">Personu skaits</label><input type="number" name="skaits" class="box" required>
-    <label for="">E-pasts</label><input type="email" name="epasts" class="box" required>
+    </div>
+    <div>
     <label for="">Izvēlētais Laiks</label>
-<select name="Laiks" class="laiks">
+    <select name="Laiks" class="laiks">
     <?php echo  "<option value=''>Diena: Laiks:</option>" ?>
 </select>
 
@@ -127,8 +133,22 @@ require "Assets/header.php";
        */
     ?>
     <!-- </select> -->
-    <button type="submit" name="iesniegt" class="btn">Pieteikties</button>
+    </div>
+    </div>
+    <div>
+    <div>
+    <label for="">Personu skaits</label><input type="number" name="skaits" class="box" required>
+    </div>
+    <div>
+    <label for="">E-pasts</label><input type="email" name="epasts" class="box" required>
+    </div>
+    <div>
+    <label for="">Komentārs</label><textarea class="kom" type="text" name="koments" class="box komentars" required></textarea>
+    </div>
+    </div>
+    
 </div>
+<button type="submit" name="iesniegt" class="btn" style="width:auto;">Pieteikties</button>
 </form>
 
 
@@ -150,5 +170,45 @@ require "Assets/header.php";
 <?php
 require "Assets/footer.php";
 ?>
+
+
+<script>
+var BGcolors = ["rgb(50,50,50)","white"];
+
+var BGcolorIndex = 0;
+
+function Krasas() {
+   
+    var pie=document.getElementById("pieci");
+
+    
+    if( BGcolorIndex>=BGcolors.length ) {
+        BGcolorIndex=0;
+    }
+      //bg tums
+    if(BGcolorIndex==0){
+
+        pie.style.backgroundImage = "linear-gradient(to bottom,var(--main-color)-30%, rgb(50,50,50) 50% ,var(--main-color)130%)";
+
+        
+
+        localStorage.setItem(BGcolorIndex,0);
+    }else{
+      //bg gais
+   
+        pie.style.backgroundImage = "linear-gradient(to bottom,var(--bg)-10%, #fff 50% ,var(--bg)110%)";
+       
+
+        localStorage.setItem(BGcolorIndex,1);
+    }
+    pie.style.backgroundColor = BGcolors[BGcolorIndex];
+   
+    BGcolorIndex++;
+
+    
+    
+    
+}
+        </script>
     </body>
     </html>

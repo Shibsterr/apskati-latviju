@@ -44,7 +44,7 @@ require "Assets/header.php";
     
             <?php
                 require "Assets/db.php";
-                $celojumaSQL = "SELECT * FROM celojuma_celojums GROUP BY ID ORDER BY ID ASC";   //filtrs pec like/dislike ratio
+                $celojumaSQL = "SELECT * FROM celojuma_celojums WHERE Dzēsts != 1 GROUP BY ID ORDER BY ID ASC";   //filtrs pec like/dislike ratio
                 $atlasaPopCelojumus = mysqli_query($savienojums, $celojumaSQL);
 
                 if(mysqli_num_rows($atlasaPopCelojumus) > 0){
@@ -66,8 +66,8 @@ require "Assets/header.php";
                             </div>
                             </div><div>";
                             if(isset($_SESSION['lietotajvards_GG69'])){        
-                                echo "<button type='button' class='edit' id='editosana'><i class='fas fa-edit'></i></button>";
-                                echo "<button type='button' class='delete' id='deletosana'><i class='fas fa-trash'></i></button>";
+                                echo "<button type='button' class='edit' id='editosana' onclick='rediget({$Popcelojums['ID']})'><i class='fas fa-edit'></i></button>";
+                                echo "<button type='button' class='delete' id='deletosana' onclick='dzest({$Popcelojums['ID']})'><i class='fas fa-trash'></i></button>";
                             }
                         echo "</div></div>";
                     }

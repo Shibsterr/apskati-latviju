@@ -23,6 +23,7 @@
         <div id="laba">
         <nav>
             <a href="index.php" class="<?php echo($page == 'sakums' ? 'current' : ''); ?>">Sākumlapa</a>
+            <a href="aktualitates.php"class="<?php echo($page == 'aktualitates' ? 'current' : ''); ?>">Aktualitātes</a>
             <a href="jaunumi.php" class="<?php echo($page == 'jaunumi' ? 'current' : ''); ?>">Jaunākie ceļojumi</a>
             <a href="celojumi.php" class="<?php echo($page == 'piedavatie' ? 'current' : ''); ?>">Piedāvātie ceļojumi</a>
             <a href="parmums.php" class="<?php echo($page == 'par' ? 'current' : ''); ?>">Par mums</a>
@@ -63,16 +64,6 @@ if (!isset($_POST['autorizacija'])) {
     <input type="password" placeholder="Ievadiet paroli" name="parole" required>
 
     <button type="submit" class="btn" name="autorizacija">Gatavs</button>
-
-    <?php
-    
-    /*
-            if(isset($_POST['autorizacija'])) {
-    echo "<div class='lds-ripple'><div>";
-    header("Refresh: 3; url= ./");
-            }
-      */      
-    ?>
   
   </form>
 </div>
@@ -82,5 +73,21 @@ if (!isset($_POST['autorizacija'])) {
     ?>
 
     </div>
+    <div class="editpop" style="display: none;">
+    <form action="POST" class="form-container" id="editBG">
+          <input type="hidden" id="objectId">
+              <div>
+                  <label for="objectName">Name:</label>
+                  <input type="text" id="objectName" name="name">
+              </div>
+              <div>
+                  <label for="objectDescription">Description:</label>
+                  <textarea id="objectDescription" name="description"></textarea>
+              </div>
+              <button type="submit">Save</button>
+              <button type="button" id="closePopup" onclick="paslept()">Cancel</button>
+    </form>
+  </div>
+
 
 </header>

@@ -13,6 +13,7 @@
     // }
 
     // Ielogošanas sistēma
+
     if(isset($_POST['autorizacija'])){
         session_start();
 
@@ -32,36 +33,51 @@
                     header("Location: Admin/index.php");
 
                 } else {
-                    // echo "Nepareizs lietotājvārds vai parole! parole";
+                    echo "Nepareizs lietotājvārds vai parole! parole";
                 }
             }
         } else {
-            // echo "Nepareizs lietotājvārds vai parole! vispar";
+            echo "Nepareizs lietotājvārds vai parole! vispar";
         }
     }
 
-    if(isset($_POST['choice']) && isset($_POST['postId'])){
-        $postId = $_POST['postId'];
-        $choice = $_POST['choice'];
-        
+
+if(isset($_POST['choice']) && isset($_POST['postId'])){
+    $postId = $_POST['postId'];
+    $choice = $_POST['choice'];
+    
+    // Check if the user has already liked/disliked this post
+    if (isset($_SESSION['liked_posts'][$postId])) {
+        // If the user has already liked/disliked this post, update the cache
         if ($choice === 'like') {
-            $savienojums->query("UPDATE celojuma_celojums SET Patik = Patik + 1 WHERE ID = $postId");
+            $_SESSION['liked_posts'][$postId] = 'like';
         } elseif ($choice === 'dislike') {
-            $savienojums->query("UPDATE celojuma_celojums SET Nepatik = Nepatik + 1 WHERE ID = $postId");
+            $_SESSION['liked_posts'][$postId] = 'dislike';
         }
-        
-        $result = $savienojums->query("SELECT Patik, Nepatik FROM celojuma_celojums WHERE ID = $postId");
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $likes = $row['Patik'];
-            $dislikes = $row['Nepatik'];
-            echo "$likes;$dislikes";
-        } else {
-            echo "Error: Post not found";
-        }
-        
-        $savienojums->close();
+    } else {
+        // If the user has not liked/disliked this post before, add it to the cache
+        $_SESSION['liked_posts'][$postId] = $choice;
     }
+    
+    // Update the database
+    if ($choice === 'like') {
+        $savienojums->query("UPDATE celojuma_celojums SET Patik = Patik + 1 WHERE ID = $postId");
+    } elseif ($choice === 'dislike') {
+        $savienojums->query("UPDATE celojuma_celojums SET Nepatik = Nepatik + 1 WHERE ID = $postId");
+    }
+    
+    $result = $savienojums->query("SELECT Patik, Nepatik FROM celojuma_celojums WHERE ID = $postId");
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $likes = $row['Patik'];
+        $dislikes = $row['Nepatik'];
+        echo "$likes;$dislikes";
+    } else {
+        echo "Error: Post not found";
+    }
+    
+    $savienojums->close();
+}
 
     //datu dzēšana
     if(isset($_POST['delete'])){

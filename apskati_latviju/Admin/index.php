@@ -15,8 +15,8 @@
         <div>
         <div class="info-box">      
             <span><div class="wrappers">
-                <div class="topslice">12</div>
-                <div class="bottomslice" aria-hidden="true">12</div>
+                <div class="topslice"><?php echo $jauniPieteikumi;?></div>
+                <div class="bottomslice" aria-hidden="true"><?php echo $jauniPieteikumi;?></div>
             </div>
         </span>
             <div class="statistika">
@@ -27,8 +27,8 @@
 
         <div class="info-box">
             <span><div class="wrappers">
-                <div class="topslice">64</div>
-                <div class="bottomslice" aria-hidden="true">64</div>
+                <div class="topslice"><?php echo $celojumaSkaits;?></div>
+                <div class="bottomslice" aria-hidden="true"><?php echo $celojumaSkaits;?></div>
                 </div>
                 </span>
             <div class="statistika">
@@ -39,8 +39,8 @@
 
         <div class="info-box">
             <span><div class="wrappers">
-                <div class="topslice">8</div>
-                <div class="bottomslice" aria-hidden="true">8</div>
+                <div class="topslice"><?php echo $pieteikumiKopa;?></div>
+                <div class="bottomslice" aria-hidden="true"><?php echo $pieteikumiKopa;?></div>
             </div>
         </span>
             <div class="statistika">
@@ -52,45 +52,60 @@
         <div class="info-box">
             <span>
                 <div class="wrappers">
-                    <div class="topslice">5</div>
-                    <div class="bottomslice" aria-hidden="true">5</div>
+                    <div class="topslice"><?php echo $darbiniekaSkaits;?></div>
+                    <div class="bottomslice" aria-hidden="true"><?php echo $darbiniekaSkaits;?></div>
                 </div>
             </span>
             <div class="statistika">
-                <h3>Aktīvie specialitātes</h3>
-                <p>Kurām var pieteikties</p>
+                <h3>Darbinieku skaits</h3>
+                <p>Kur ir reģistrēti</p>
             </div>
         </div>
 </div>
         <div class="chart-container">
             <canvas id="pie"></canvas>
         </div>
-        
-            <script>
-                var xValues = ["Patīk", "Nepatīk"];
-                var yValues = [30, 49];     //skaits no datubāzes
-                var barColors = [
+            <?php
+                $piep_spec_SQL = "SELECT Patik, Nepatik FROM celojuma_celojums";
+                $atlasa_piep_spec = mysqli_query($savienojums, $piep_spec_SQL);
+                $likes = 0;
+                $dislikes = 0;
+                while ($spec = mysqli_fetch_array($atlasa_piep_spec)) {
+                    $likes += $spec['Patik'];
+                    $dislikes += $spec['Nepatik'];
+                }
+                $ratio = round(($likes / ($likes + $dislikes)) * 100, 2);
+                $data = array(
+                    'labels' => array('Likes', 'Dislikes'),
+                    'values' => array($likes, $dislikes)
+                );
+                $json_data = json_encode($data);
+                echo "<script>var data = JSON.parse('{$json_data}');</script>";
+            ?>
+        <script>
+            var xValues = data.labels;
+            var yValues = data.values;
+            var barColors = [
                 "#23a52e",
-                "rgb(175, 41, 41)",
-                ];
-
-                new Chart("pie", {
+                "rgb(175, 41, 41)"
+            ];
+            new Chart("pie", {
                 type: "pie",
                 data: {
                     labels: xValues,
                     datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
+                        backgroundColor: barColors,
+                        data: yValues
                     }]
                 },
                 options: {
                     title: {
-                    display: true,
-                    text: "Kopējā ceļojuma attiecība starp lietotāju atsauksmēm"
+                        display: true,
+                        text: "Like/Dislike Ratio: <?php echo $ratio; ?>%"
                     }
                 }
-                });
-            </script>
+            });
+        </script>
         
     </div>
 </section>

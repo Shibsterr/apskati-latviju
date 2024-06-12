@@ -17,21 +17,6 @@ window.onload = () => {
     localStorage.getItem(BGcolorIndex);
 };
 
-/*
-let menu = document.querySelector('#menu-bar')
-let navbar = document.querySelector('nav')
-
-menu.onclick = () => {
-    navbar.classList.toggle('active')
-    menu.classList.toggle('fa-times')
-}
-
-window.onscroll = () => {
-    navbar.classList.remove('active')
-    menu.classList.remove('fa-times')
-}
-*/
-
 var BGcolors = ["rgb(50,50,50)","white"];
 
     var BGcolorIndex = 0;
@@ -47,22 +32,24 @@ var BGcolors = ["rgb(50,50,50)","white"];
         if( BGcolorIndex>=BGcolors.length ) {
             BGcolorIndex=0;
         }
-          //bg light
+          //bg tums
         if(BGcolorIndex==0){
             col.style.color = "white";
             lin.style.backgroundImage = "linear-gradient(to bottom, rgb(50,50,50) 30% ,var(--main-color) 130%)";
-            par.style.backgroundImage = "linear-gradient(to top, rgb(50,50,50) 40% ,var(--main-color) 150%)";
+            par.style.backgroundImage = "linear-gradient(to top, rgb(50,50,50) 30% ,var(--main-color) 130%)";
             hea.style.backgroundColor = "rgb(50,50,50)";
             myf.style.backgroundColor = "rgb(50,50,50)";
+          
 
             localStorage.setItem(BGcolorIndex,0);
         }else{
-          //bg tums
+          //bg gais
             col.style.color = "rgb(50,50,50)";
             lin.style.backgroundImage = "linear-gradient(to bottom, #fff 20% ,var(--bg)70%)";
-            par.style.backgroundImage = "linear-gradient(to top, #fff 20% ,var(--bg)70%)";
+            par.style.backgroundImage = "linear-gradient(to top, var(--bg) 30% ,var(--bg) 130%)";
             hea.style.backgroundColor = "white";
             myf.style.backgroundColor = "white";
+          
 
             localStorage.setItem(BGcolorIndex,1);
         }
@@ -90,78 +77,33 @@ var BGcolors = ["rgb(50,50,50)","white"];
     }
 
 
-
-
-    // LIKE DISLIKES
-  //   document.addEventListener('DOMContentLoaded', () => {
-  //     const likeBtns = document.querySelectorAll('.like-btn');
-  //     const dislikeBtns = document.querySelectorAll('.dislike-btn');
-  
-  //     likeBtns.forEach(btn => {
-  //         btn.addEventListener('click', () => handleLikeDislike(btn, 'like'));
-  //     });
-  
-  //     dislikeBtns.forEach(btn => {
-  //         btn.addEventListener('click', () => handleLikeDislike(btn, 'dislike'));
-  //     });
-  
-  //     function handleLikeDislike(button, type) {
-  //         const postId = button.parentElement.getAttribute('data-id');
-  //         const storedChoice = localStorage.getItem(`choice_${postId}`);
-  
-  //         if (storedChoice !== type) {
-  //             localStorage.setItem(`choice_${postId}`, type);
-  //             updateDatabase(postId, type);
-  //         }
-  //     }
-  
-  //     function updateDatabase(postId, type) {
-  //         const xhr = new XMLHttpRequest();
-  //         xhr.open('POST', 'Assets/db.php', true);
-  //         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  //         xhr.onreadystatechange = function() {
-  //             if (xhr.readyState === 4 && xhr.status === 200) {
-  //                 const response = xhr.responseText.split(';');
-  //                 if (response.length === 2) {
-  //                     const likes = response[0];
-  //                     const dislikes = response[1];
-  //                     document.querySelector(`.patik[data-id='${postId}']`).innerHTML = `${likes} <i class='fas fa-thumbs-up like-btn'></i>`;
-  //                     document.querySelector(`.nepatik[data-id='${postId}']`).innerHTML = `${dislikes} <i class='fas fa-thumbs-down dislike-btn'></i>`;
-  //                 } else {
-  //                     console.error('Error:', xhr.responseText);
-  //                 }
-  //             }
-  //         };
-  //         xhr.send(`postId=${postId}&choice=${type}`);
-  //     }
-  // });
-  
-  
-  
-    //--------------------------------------------------------------
-
-
-
-/*
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("box2");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    function rediget(id) {
+      const popup = document.querySelector('.editpop');
+      const objectIdInput = document.getElementById('objectId');
+      const objectNameInput = document.getElementById('objectName');
+      const objectDescriptionInput = document.getElementById('objectDescription');
+      
+      // Set objectId value in the hidden field
+      objectIdInput.value = id;
+      
+      // Fetch object data from the server using AJAX
+      fetch('fetch_object_data.php?id=' + id)
+          .then(response => response.json())
+          .then(data => {
+              // Fill the form fields with fetched data
+              objectNameInput.value = data.name;
+              objectDescriptionInput.value = data.description;
+          })
+          .catch(error => console.error('Error fetching object data:', error));
+      
+      // Show the popup
+      popup.style.display = 'block';
   }
-  slides[slideIndex-1].style.display = "block";  
-}
-*/
-  
+
+  function paslept(){
+    const popup = document.querySelector('.editpop');
+      popup.style.display = 'none';
+  }
 
 
 let slideIndex = 0;
@@ -217,106 +159,56 @@ function showSlides(n) {
 
 showSlides(slideIndex);
 
+document.addEventListener('DOMContentLoaded', (event) => {
+  const likeButtons = document.querySelectorAll('.like-btn');
+  const dislikeButtons = document.querySelectorAll('.dislike-btn');
 
+  likeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          handleLikeDislike(button, 'like');
+      });
+  });
 
-/*
-let slideIndex = 0;
-const slidesToShow = 3;
+  dislikeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          handleLikeDislike(button, 'dislike');
+      });
+  });
 
-function plusSlides(n) {
-  slideIndex += n;
-  showSlides(slideIndex);
-}
+  function handleLikeDislike(button, choice) {
+      const parent = button.closest('p');
+      const postId = parent.getAttribute('data-id');
 
-function showSlides(n) {
-  let slides = document.getElementsByClassName("box2");
-  let totalSlides = slides.length;
+      // Check local storage to prevent multiple likes/dislikes
+      const storedChoice = localStorage.getItem(`choice-${postId}`);
+      if (storedChoice) {
+          alert('You have already performed this action.');
+          return;
+      }
 
+      fetch('Assets/db.php', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: `choice=${choice}&postId=${postId}`,
+      })
+      .then(response => response.text())
+      .then(data => {
+          console.log('Response data:', data);  // Debug log
+          const [likes, dislikes] = data.split(';');
+          if (likes && dislikes) {
+              parent.querySelector('.patik').innerText = `${likes} `;
+              parent.querySelector('.nepatik').innerText = `${dislikes} `;
 
-  if (n >= totalSlides) {
-    slideIndex = 0;
-  } else if (n < 0) {
-    slideIndex = totalSlides - slidesToShow;
-    if (slideIndex < 0) slideIndex = 0;
+              // Save the action in local storage
+              localStorage.setItem(`choice-${postId}`, choice);
+          } else {
+              alert('Failed to update the database.');
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);  // Error handling
+      });
   }
-
-  
-  for (let i = 0; i < totalSlides; i++) {
-    slides[i].style.display = "none";
-  }
-
-  
-  for (let i = 0; i < slidesToShow; i++) {
-    let index = (slideIndex + totalSlides - slidesToShow + i) % totalSlides;
-    slides[index].style.display = "block";
-  }
-}
-
-showSlides(slideIndex);
-*/
-// let slideIndex = 0;
-// const slidesToShow = 3;
-
-// function plusSlides(n) {
-//   slideIndex += n;
-//   showSlides(slideIndex);
-// }
-
-// function showSlides(n) {
-//   let slides = document.getElementsByClassName("box2");
-//   let totalSlides = slides.length;
-
-//   // Adjust the slide index for looping
-//   if (n >= totalSlides) {
-//     slideIndex = 0;
-//   } else if (n < 0) {
-//     slideIndex = totalSlides - slidesToShow;
-//   }
-
-//   // Hide all slides
-//   for (let i = 0; i < totalSlides; i++) {
-//     slides[i].style.display = "none";
-//   }
-
-//   // Show the correct number of slides
-//   for (let i = 0; i < slidesToShow; i++) {
-//     let slideToShowIndex = (slideIndex + i) % totalSlides;
-//     slides[slideToShowIndex].style.display = "block";
-   
-//   }
-
-//   // Handle special case when slides wrap around the end
-//   if (slideIndex + slidesToShow > totalSlides) {
-//     let overlap = (slideIndex + slidesToShow) % totalSlides;
-//     for (let i = 0; i < overlap; i++) {
-//       slides[i].style.display = "block";
-//     }
-//   }
-// }
-
-// // Initial call to display the slides
-// showSlides(slideIndex);
-
-// var slideIndex = 1;
-// showSlides(slideIndex);
-
-// function plusSlides(n) {
-//     showSlides(slideIndex += n);
-// }
-
-// function showSlides(n) {
-//     var i;
-//     var slides = document.getElementsByClassName("slide");
-//     var dots = document.getElementsByClassName("ppg");
-//     if (n > slides.length) { slideIndex = 1 }
-//     if (n < 1) { slideIndex = slides.length }
-//     for (i = 0; i < slides.length; i++) {
-//         slides[i].style.display = "none";
-//     }
-//     for (i = 0; i < dots.length; i++) {
-//         dots[i].className = dots[i].className.replace(" active", "");
-//     }
-//     slides[slideIndex - 1].style.display = "block";
-//     dots[slideIndex - 1].className += " active";
-// }
-
+});

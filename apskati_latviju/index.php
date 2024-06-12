@@ -29,7 +29,7 @@ require "Assets/header.php";
 
             <?php
                 require "Assets/db.php";
-                $celojumaSQL = "SELECT * FROM celojuma_celojums GROUP BY ID ORDER BY Patik DESC LIMIT 3";   //filtrs pec like/dislike ratio
+                $celojumaSQL = "SELECT * FROM celojuma_celojums WHERE Dzēsts != 1 GROUP BY ID ORDER BY Patik DESC LIMIT 3";   //filtrs pec like/dislike ratio
                 $atlasaPopCelojumus = mysqli_query($savienojums, $celojumaSQL);
 
 
@@ -52,8 +52,8 @@ require "Assets/header.php";
                             </div>
                             </div><div>";
                             if(isset($_SESSION['lietotajvards_GG69'])){        
-                                echo "<button type='button' class='edit' id='editosana'><i class='fas fa-edit'></i></button>";
-                                echo "<button type='button' class='delete' id='deletosana'><i class='fas fa-trash'></i></button>";
+                                echo "<button type='button' class='edit' id='editosana' onclick='rediget({$Popcelojums['ID']})'><i class='fas fa-edit'></i></button>";
+                                echo "<button type='button' class='delete' id='deletosana' onclick='dzest({$Popcelojums['ID']})'><i class='fas fa-trash'></i></button>";
                             }
                         echo "</div></div>";
                     }
@@ -91,7 +91,7 @@ require "Assets/header.php";
     <div class="visi">
         <?php
         $i=0;
-        $celojumaSQL = "SELECT * FROM celojuma_celojums GROUP BY ID DESC";
+        $celojumaSQL = "SELECT * FROM celojuma_celojums WHERE Dzēsts != 1 GROUP BY ID DESC";
         $atlasaVisusCelojumus = mysqli_query($savienojums, $celojumaSQL);
         if(mysqli_num_rows($atlasaVisusCelojumus) > 0){
             while($celojums = mysqli_fetch_assoc($atlasaVisusCelojumus)){
@@ -116,11 +116,11 @@ require "Assets/header.php";
                         <div class='papildus'>";
                         
                         if(isset($_SESSION['lietotajvards_GG69'])){        
-                            echo "<button type='button' class='edit' id='editosana'><i class='fas fa-edit'></i></button>";
+                            echo "<button type='button' class='edit' id='editosana' onclick='rediget({$Popcelojums['ID']})'><i class='fas fa-edit'></i></button>";
                         }
                             echo " <p class='lpp'><b>$i</b></p>";
                         if(isset($_SESSION['lietotajvards_GG69'])){    
-                            echo "<button type='button' class='delete' id='deletosana'><i class='fas fa-trash'></i></button>";
+                            echo "<button type='button' class='delete' id='deletosana' onclick='dzest({$Popcelojums['ID']})'><i class='fas fa-trash'></i></button>";
                         }
                     echo "</div></div>";
 
@@ -145,6 +145,3 @@ require "Assets/footer.php";
 ?>
 
 </body>
-
-
-

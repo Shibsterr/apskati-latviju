@@ -245,6 +245,7 @@ nav a:hover{
     max-inline-size:2rem;
   }
   
+  
   .form-popup {
     display: none;
     position: fixed;
@@ -472,7 +473,6 @@ box-shadow: 0px 0px 3px var(--main-color), 0px 0px 8px var(--main-color), 0px 0p
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin:1rem;
     padding:.5rem;
 }
 
@@ -565,9 +565,9 @@ cursor: pointer;
 }
 
 #parmums {
-
     padding-top: 10rem;
-    background-image: linear-gradient(to top, #fff 20% ,var(--bg)70%);
+    /* background-image: linear-gradient(to top, #fff 20% ,var(--bg)70%); */
+    background-color: var(--bg);
     border-radius: 10rem 10rem 0 0;
     box-shadow: var(--box-shadow);
     padding:1rem;
@@ -712,11 +712,11 @@ footer{
     font-size: 3rem;
     color: var(--main-color);
     border-radius: var(--radius);
-    margin: 0 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 .5rem 1.5rem rgba(139, 139, 139, 0.726);
+    margin:0 2rem;
 }
 
 .info-box h3{
@@ -873,7 +873,7 @@ tr:hover{
   color: var(--main-color);
   background: var(--bg);
   border-radius: var(--radius);
-  margin: 0 0.5rem;
+  margin: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -932,14 +932,67 @@ tr:hover{
     opacity: 0.8;
   }
 
+  /*PAGINS*/
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  outline: 1px solid black;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+.pagination button:hover {
+background-color: var(--bg);
+}
+
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.pagination button.active {
+  background-color: var(--main-color);
+  color: black;
+}
+
+
+  /*PAGINS BEIGAS*/
 /* ------------------------------------------------------------------------------------------*/
+.ulstils{
+  font-size:1.5rem; 
+  list-style-type:square;
+    width:800px;
+    text-align: left;
+    margin:1rem;
+}
+
+@media (max-width: 1350px){
+  .ulstils{
+     text-align:center;
+  }
+}
+
+
+
 @media (max-width: 1080px){
     html{
         font-size: 55%;
     }
 }
 
-@media (max-width: 1400px){
+@media (max-width: 1560px){
     #menubar{
         display: block;
     }
@@ -1072,13 +1125,16 @@ tr:hover{
   .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
   }
+.adding{
+  margin:1rem;
+}
 
 .edit, .delete, .adding i{
   background-color:#36d0f7;
   padding:1rem 1.5rem;
   cursor:pointer;
   font-style:normal;
-  margin-bottom:1rem;
+
 }
 
 .adding i{
@@ -1214,6 +1270,7 @@ ANIMACIJA BEIGAS LOADING*/
   padding: 2rem;
   width: 100%;
   height:fit-content;
+  margin:10rem;
 }
 
 .celosana form h1{
@@ -1222,12 +1279,32 @@ ANIMACIJA BEIGAS LOADING*/
 }
 
 .celosana form .inputs{
-  justify-items: start;
+  justify-items: center;
   margin: 3rem;
   padding: 3rem;
+  margin-top: 0rem;
+  padding-top: 0rem;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+.celosana form .inputs div{
+margin: 2rem;
+}
+
+.celosana .inputs .kom{
+  height: 15rem;
+  width:35rem;
+  resize: none;
+  text-align: center;
+  border: var(--border);
+  box-shadow: 0 0.5rem 1.5rem rgb(139 139 139 / 73%);
+  border-radius: var(--radius);
+  padding: 0 2rem;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  align-items: baseline;
+  padding: 0.5rem;
 }
 
 .celosana label{
@@ -1254,6 +1331,19 @@ ANIMACIJA BEIGAS LOADING*/
 width:100%;
 }
 
+#celojumi .celosana .btn{
+  margin:0;
+}
+
+#celojumi .celosana .box, #celojumi .celosana .box2{
+  width:35rem;
+  height:5rem;
+}
+
+#celojumi .celosana .box .komentars{
+  height:30rem;
+}
+
 #sakums .virsrksts{
   display:flex;
   justify-content: space-around;
@@ -1265,12 +1355,16 @@ width:100%;
   font-size:1.7rem;
 }
 
+
+
+
+
 .parinfo{
   display:flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap:wrap;
-  margin:1rem;
+  margin:5rem;
 }
 
 .parinfo img, .parinfo iframe{
@@ -1313,71 +1407,185 @@ width:100%;
 
 /*KUBS*/
 
-.kubacons {
-	position: relative;
-	top: -80px;
-	transform: skewY(-20deg);
-	animation: animate 5s linear infinite;
-	.cube {
-		position: relative;
-		z-index: 2;
-		&:nth-child(2) {
-			z-index: 1;
-			translate: -60px -60px;
-		}
-		&:nth-child(3) {
-			z-index: 3;
-			translate: 60px 60px;
-		}
-		div {
-			position: absolute;
-			display: flex;
-			flex-direction: column;
-			gap: 30px;
-			translate: calc(-70px * var(--x)) calc(-60px * var(--y));
-			span {
-				position: relative;
-				display: inline-block;
-				width: 50px;
-				height: 50px;
-				background-image:URL("https://media.cnn.com/api/v1/images/stellar/prod/190819164202-beautiful-places-in-latvia-ventspils-2.jpg?q=w_1110,c_fill");
-				z-index: calc(1 * var(--i));
-				transition: 1s;
-				&:hover {
-					transition: 0s;
-					background: #ef4149;
-					filter: drop-shadow(0 0 30px #ef4149);
-					&:before, 
-					&:after {
-						transition: 0s;
-						background: #ef4149;
-					}
-				}
-				&:before {
-					content: "";
-					position: absolute;
-					left: -40px;
-					width: 40px;
-					height: 100%;
-					background: #fff;
-					transform-origin: right;
-					transform: skewY(45deg);
-					transition: 1.5s;
-				}
-				&:after {
-					content: "";
-					position: absolute;
-					top: -40px;
-					left: 0px;
-					width: 100%;
-					height: 40px;
-					background: #f2f2f2;
-					transform-origin: bottom;
-					transform: skewX(45deg);
-					transition: 1.5s;
-				}
-			}
-		}
-	}
+.space3d {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  display: inline-block;
+  margin:5rem;
+}
+
+._3dbox {
+  display: inline-block;
+  transition: all 0.85s cubic-bezier(0.175,0.885,0.320,1.275);
+
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(15deg);
+}
+
+._3dface {
+  overflow: hidden;
+  position: absolute;
+  
+  border: 1px solid #888;
+  background: #FFF;
+  box-shadow: inset 0 0 60px rgba(50, 50, 50, 0.1),
+ 0 0 50px rgba(50, 50, 50, 0.3);
+  color: #333;
+  line-height: 300px;
+  opacity: 1;
+}
+
+
+._3dface--front {
+  width: 300px;
+  height: 300px;
+  transform: translate3d(0, 0, 150px);
+}
+
+
+._3dface--top {
+  width: 300px;
+  height: 300px;
+  transform: rotateX(90deg) translate3d(0, 0, 150px);
+}
+
+._3dface--bottom {
+  width: 300px;
+  height: 300px;
+  transform: rotateX(-90deg) translate3d(0, 0, 150px);
+}
+
+._3dface--left {
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  margin-left: -150px;
+  transform: rotateY(-90deg) translate3d(0, 0, 150px);
+}
+
+
+._3dface--right {
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  margin-left: -150px;
+  transform: rotateY(90deg) translate3d(0, 0, 150px);
+}
+
+._3dface--back {
+  width: 300px;
+  height: 300px;
+  transform: rotateY(180deg) translate3d(0, 0, 150px);
+}
+
+
+.parinfo .radiator{
+  display:flex;
+  align-items: center;
+    flex-direction: column;
+}
+
+
+#radio-left:checked ~ .space3d ._3dbox {
+  transform: rotateY(90deg); 
+}
+  
+#radio-right:checked ~ .space3d ._3dbox {
+  transform: rotateY(-90deg); 
+}
+  
+#radio-bottom:checked ~ .space3d ._3dbox {
+  transform: rotateX(90deg); 
+}
+
+#radio-top:checked ~ .space3d ._3dbox {
+  transform: rotateX(-90deg); 
+}
+  
+#radio-back:checked ~ .space3d ._3dbox {
+  transform: rotateY(180deg); 
+}
+
+.separator {
+  margin-top:1rem;
+}
+
+  ._3dface--front {
+  background: url(https://cdn.liepajniekiem.lv/lv/thumbnails/2000x2000x1/2024/04/f151-6619226e98425-scaled.jpg);
+  background-size: auto 100%;
+}
+
+
+._3dface--left {
+  background: url(https://www.exitriga.lv/images/speasyimagegallery/albums/15/images/uldevena-pils-02.jpg);
+  background-size: auto 100%;
+}
+  
+   ._3dface--right {
+  background: url(https://lielaisdzintars.lv/dividocuments/file/valters_pelns_foto-0003.jpg);
+  background-size: auto 100%;
+}
+  
+   ._3dface--top {
+  background: url(https://www.mammadaba.lv/images/igallery/original/5601-5700/20210916_APPO1750-5616.jpg);
+  background-size: auto 100%;
+}
+  
+   ._3dface--bottom {
+  background: url(https://media.brate.com/images/europa/lotwa/jurmala/jurmala-5.jpg?tr=n-hero);
+  background-size: auto 100%;
+}
+  
+  ._3dface--back {
+  background: url(https://cf.bstatic.com/xdata/images/hotel/max1024x768/262678423.jpg?k=a20cf698d23bd12f676f672049a027203af65c71a74a5c3f5432fe38c9877f09&o=&hp=1);
+  background-size: auto 100%;
+}
+
+
+.radiator input[type="radio"]{
+  width:1.8rem;
+  height:1.8rem;
+  background-color:var(--bg);
+  color: white;
+  border: 2px solid black;
+}
+
+.radiator input[type="radio"]:checked{
+background-color:var(--main-color);
+
 }
 /*KUBA BEIGAS*/
+
+
+
+.editpop {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  animation: popupEntrance 0.5s ease forwards;
+}
+
+
+@keyframes popupEntrance {
+  0% {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+  }
+}
