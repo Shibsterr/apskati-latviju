@@ -16,13 +16,8 @@ session_start(); // Start session to access session variables
 
     // Ielogošanas sistēma
 
-<<<<<<< HEAD
 if(isset($_POST['autorizacija'])){
         if (!session_id()) 
-=======
-    if(isset($_POST['autorizacija'])){
-        session_start();
->>>>>>> 5ea5b4438d524637238a467d34c0bfad8c5d7bd3
 
         $username = mysqli_real_escape_string($savienojums, $_POST['lietotajvards']);
         $password = mysqli_real_escape_string($savienojums, $_POST['parole']);
@@ -33,7 +28,6 @@ if(isset($_POST['autorizacija'])){
         if(mysqli_num_rows($result) == 1) {
             while($user = mysqli_fetch_array($result)) {
                 if(password_verify($password, $user['Parole'])) {
-<<<<<<< HEAD
                     session_start();
                     $_SESSION['lietotajvards_GG69'] = $user['Vards'];
                     header("Location: ./Admin/index.php");
@@ -44,18 +38,6 @@ if(isset($_POST['autorizacija'])){
         } else {
             $errors = "Nepareizs lietotājvārds vai parole! vispar";
             header("Location: ./index.php");
-=======
-
-                    $_SESSION['lietotajvards_GG69'] = $user['Lietotajvards'];
-                    header("Location: Admin/index.php");
-
-                } else {
-                    echo "Nepareizs lietotājvārds vai parole! parole";
-                }
-            }
-        } else {
-            echo "Nepareizs lietotājvārds vai parole! vispar";
->>>>>>> 5ea5b4438d524637238a467d34c0bfad8c5d7bd3
         }
 }
 
@@ -72,7 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['choice']) && isset($_
         exit();
     }
 
-<<<<<<< HEAD
     // Begin transaction
     $savienojums->begin_transaction();
 
@@ -85,22 +66,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['choice']) && isset($_
         }
 
         // Update the new choice
-=======
-
-if(isset($_POST['choice']) && isset($_POST['postId'])){
-    $postId = $_POST['postId'];
-    $choice = $_POST['choice'];
-    
-    // Check if the user has already liked/disliked this post
-    if (isset($_SESSION['liked_posts'][$postId])) {
-        // If the user has already liked/disliked this post, update the cache
->>>>>>> 5ea5b4438d524637238a467d34c0bfad8c5d7bd3
         if ($choice === 'like') {
-            $_SESSION['liked_posts'][$postId] = 'like';
+            $savienojums->query("UPDATE celojuma_celojums SET Patik = Patik + 1 WHERE ID = $postId");
         } elseif ($choice === 'dislike') {
-            $_SESSION['liked_posts'][$postId] = 'dislike';
+            $savienojums->query("UPDATE celojuma_celojums SET Nepatik = Nepatik + 1 WHERE ID = $postId");
         }
-<<<<<<< HEAD
 
         // Commit transaction
         $savienojums->commit();
@@ -119,32 +89,7 @@ if(isset($_POST['choice']) && isset($_POST['postId'])){
         echo json_encode(['error' => 'Transaction failed: ' . $e->getMessage()]);
     } finally {
         $savienojums->close();
-=======
-    } else {
-        // If the user has not liked/disliked this post before, add it to the cache
-        $_SESSION['liked_posts'][$postId] = $choice;
->>>>>>> 5ea5b4438d524637238a467d34c0bfad8c5d7bd3
     }
-    
-    // Update the database
-    if ($choice === 'like') {
-        $savienojums->query("UPDATE celojuma_celojums SET Patik = Patik + 1 WHERE ID = $postId");
-    } elseif ($choice === 'dislike') {
-        $savienojums->query("UPDATE celojuma_celojums SET Nepatik = Nepatik + 1 WHERE ID = $postId");
-    }
-    
-    $result = $savienojums->query("SELECT Patik, Nepatik FROM celojuma_celojums WHERE ID = $postId");
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $likes = $row['Patik'];
-        $dislikes = $row['Nepatik'];
-        echo "$likes;$dislikes";
-    } else {
-        echo "Error: Post not found";
-    }
-    
-    $savienojums->close();
-}
 
     exit();
 }

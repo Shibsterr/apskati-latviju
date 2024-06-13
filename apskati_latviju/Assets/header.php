@@ -74,7 +74,6 @@ if (!$_SESSION['lietotajvards_GG69']) {
     ?>
 
     </div>
-<<<<<<< HEAD
     <div class="editpop-overlay" style="display: none;"></div>
         <div class="editpop" style="display: none;">
             <form action="Assets/db.php" method="POST" class="form-container" id="editForm">
@@ -192,23 +191,6 @@ if (!$_SESSION['lietotajvards_GG69']) {
     
 </script>
 
-=======
-    <div class="editpop" style="display: none;">
-    <form action="POST" class="form-container" id="editBG">
-          <input type="hidden" id="objectId">
-              <div>
-                  <label for="objectName">Name:</label>
-                  <input type="text" id="objectName" name="name">
-              </div>
-              <div>
-                  <label for="objectDescription">Description:</label>
-                  <textarea id="objectDescription" name="description"></textarea>
-              </div>
-              <button type="submit">Save</button>
-              <button type="button" id="closePopup" onclick="paslept()">Cancel</button>
-    </form>
-  </div>
->>>>>>> 5ea5b4438d524637238a467d34c0bfad8c5d7bd3
 
 
 </header>

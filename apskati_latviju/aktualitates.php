@@ -4,7 +4,6 @@ $page = 'aktualitates';
 require "Assets/header.php";
 ?>
 
-<<<<<<< HEAD
 <section id="sakums" class="insakums">
         <div class="content">
             <h2>JAUNĀKĀS AKTUALITĀTES</h2>
@@ -14,9 +13,6 @@ require "Assets/header.php";
             <img src="Images/FOLK.jpg" alt="">
         </div>
     </section>
-=======
-
->>>>>>> 5ea5b4438d524637238a467d34c0bfad8c5d7bd3
 
 
 

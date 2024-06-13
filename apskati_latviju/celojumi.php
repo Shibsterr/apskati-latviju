@@ -79,46 +79,7 @@ require "Assets/header.php";
     ?>
 </div>
 
-<<<<<<< HEAD
 
-=======
-    
-            <?php
-                require "Assets/db.php";
-                $celojumaSQL = "SELECT * FROM celojuma_celojums WHERE Dzēsts != 1 GROUP BY ID ORDER BY ID ASC";   //filtrs pec like/dislike ratio
-                $atlasaPopCelojumus = mysqli_query($savienojums, $celojumaSQL);
-
-                if(mysqli_num_rows($atlasaPopCelojumus) > 0){
-                   
-                    while($Popcelojums = mysqli_fetch_assoc($atlasaPopCelojumus)){
-                        echo "
-                        <div class='box'>
-                        <h3>{$Popcelojums['Nosaukums']}</h3>
-                            <img src='{$Popcelojums['Attels_URL']}'>
-                            <p class='teksts'>{$Popcelojums['Apraksts']}</p>
-                            <div class='ratings'>
-                            <form method='post' action='pieteikums.php'>
-                                <button type='submit' class='btn' name='pieteikties' value='{$Popcelojums['Nosaukums']}'>
-                                Pieteikties</button>
-                            </form>
-                            <div>
-                            <p class='patik'>{$Popcelojums['Patik']} <i class='fas fa-thumbs-up'></i></p>
-                            <p class='nepatik'>{$Popcelojums['Nepatik']} <i class='fas fa-thumbs-down'></i></p>
-                            </div>
-                            </div><div>";
-                            if(isset($_SESSION['lietotajvards_GG69'])){        
-                                echo "<button type='button' class='edit' id='editosana' onclick='rediget({$Popcelojums['ID']})'><i class='fas fa-edit'></i></button>";
-                                echo "<button type='button' class='delete' id='deletosana' onclick='dzest({$Popcelojums['ID']})'><i class='fas fa-trash'></i></button>";
-                            }
-                        echo "</div></div>";
-                    }
-                }else{
-                    echo "Nav neviena ceļojuma!";
-                }
-            ?>
-            
-            </div>
->>>>>>> 5ea5b4438d524637238a467d34c0bfad8c5d7bd3
 </section>
 <?php
 require "Assets/footer.php";

@@ -1,1 +1,36 @@
 [11-Jun-2024 11:29:19 Europe/Riga] PHP Notice:  Undefined index: COUNT(Audzēknis_ID) in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/stats.php on line 17
+[13-Jun-2024 03:01:21 Europe/Riga] PHP Warning:  require(Assets/db.php): failed to open stream: No such file or directory in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 21
+[13-Jun-2024 03:01:21 Europe/Riga] PHP Fatal error:  require(): Failed opening required 'Assets/db.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 21
+[13-Jun-2024 03:02:08 Europe/Riga] PHP Warning:  require(Assets/db.php): failed to open stream: No such file or directory in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 21
+[13-Jun-2024 03:02:08 Europe/Riga] PHP Fatal error:  require(): Failed opening required 'Assets/db.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 21
+[13-Jun-2024 03:02:09 Europe/Riga] PHP Warning:  require(Assets/db.php): failed to open stream: No such file or directory in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 21
+[13-Jun-2024 03:02:09 Europe/Riga] PHP Fatal error:  require(): Failed opening required 'Assets/db.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 21
+[13-Jun-2024 03:02:12 Europe/Riga] PHP Warning:  require(Assets/db.php): failed to open stream: No such file or directory in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 21
+[13-Jun-2024 03:02:12 Europe/Riga] PHP Fatal error:  require(): Failed opening required 'Assets/db.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 21
+[13-Jun-2024 03:02:13 Europe/Riga] PHP Warning:  require(Assets/db.php): failed to open stream: No such file or directory in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 21
+[13-Jun-2024 03:02:13 Europe/Riga] PHP Fatal error:  require(): Failed opening required 'Assets/db.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 21
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Lietotaja_ID in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 28
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Vards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 29
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Status in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 30
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Lietotaja_ID in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 28
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Vards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 29
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Status in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 30
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Lietotaja_ID in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 28
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Vards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 29
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Status in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 30
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Lietotaja_ID in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 28
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Vards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 29
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Status in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 30
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Lietotaja_ID in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 28
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Vards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 29
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Status in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 30
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Lietotaja_ID in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 28
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Vards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 29
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Status in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 30
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Lietotaja_ID in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 28
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Vards in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 29
+[13-Jun-2024 03:02:18 Europe/Riga] PHP Notice:  Undefined index: Status in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Admin/logs.php on line 30
+[13-Jun-2024 03:07:32 Europe/Riga] PHP Notice:  session_start(): A session had already been started - ignoring in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 2
+[13-Jun-2024 03:07:46 Europe/Riga] PHP Notice:  session_start(): A session had already been started - ignoring in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 2
+[13-Jun-2024 03:07:47 Europe/Riga] PHP Notice:  session_start(): A session had already been started - ignoring in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 2
+[13-Jun-2024 03:10:17 Europe/Riga] PHP Notice:  session_start(): A session had already been started - ignoring in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 2
