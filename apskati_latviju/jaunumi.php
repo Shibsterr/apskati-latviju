@@ -10,7 +10,7 @@ require "Assets/header.php";
             <p>Sākot ar šo gadu, jebkuram ceļojumu entuziastam būs pieejams ceļojumu klāsts ar dažādiem atrakciju un jautrību pilniem veidiem, piesakieties pie dotajiem ceļojumiem. <br><b>mēs jūs gaidīsim drīzumā!</b></p>
         </div>
         <div class="image">
-            <img src="Images/destination1.jpg" alt="">
+            <img src="Images/Jaunum.jpg" alt="">
         </div>
     </section>
 
@@ -21,8 +21,8 @@ require "Assets/header.php";
 
         <?php
         if(isset($_SESSION['lietotajvards_GG69'])){        
-                                echo "<button type='button' class='adding' id='pievienosana'><i class='fas fa-plus'><p> Pievienot ceļojumu</p></i></button>";
-                            }
+            echo "<button type='button' class='adding' id='pievienosana'><i class='fas fa-plus'><p> Pievienot ceļojumu</p></i></button>";
+        }
 ?>
     <div class="box-container">
     
@@ -30,7 +30,7 @@ require "Assets/header.php";
     
             <?php
                 require "Assets/db.php";
-                $celojumaSQL = "SELECT * FROM celojuma_celojums GROUP BY ID ORDER BY ID DESC LIMIT 6";   //filtrs pec like/dislike ratio
+                $celojumaSQL = "SELECT * FROM celojuma_celojums WHERE Dzēsts != 1 GROUP BY ID ORDER BY ID DESC LIMIT 6";   //filtrs pec like/dislike ratio
                 $atlasaPopCelojumus = mysqli_query($savienojums, $celojumaSQL);
 
                 if(mysqli_num_rows($atlasaPopCelojumus) > 0){
@@ -47,13 +47,13 @@ require "Assets/header.php";
                                 Pieteikties</button>
                             </form>
                             <div>
-                            <p class='patik'>{$Popcelojums['Patik']} <i class='fas fa-thumbs-up'></i></p>
-                            <p class='nepatik'>{$Popcelojums['Nepatik']} <i class='fas fa-thumbs-down'></i></p>
+                                <p class='patik' data-id='{$Popcelojums['ID']}'><span class='count'>{$Popcelojums['Patik']}</span> <i class='fas fa-thumbs-up like-btn'></i></p>
+                                <p class='nepatik' data-id='{$Popcelojums['ID']}'><span class='count'>{$Popcelojums['Nepatik']}</span> <i class='fas fa-thumbs-down dislike-btn'></i></p>
                             </div>
                             </div><div>";
                             if(isset($_SESSION['lietotajvards_GG69'])){        
-                                echo "<button type='button' class='edit' id='editosana'><i class='fas fa-edit'></i></button>";
-                                echo "<button type='button' class='delete' id='deletosana'><i class='fas fa-trash'></i></button>";
+                                echo "<button type='button' class='edit' id='editosana' onclick='rediget({$Popcelojums['ID']})'><i class='fas fa-edit'></i></button>";
+                                echo "<button type='button' class='delete' id='deletosana' onclick='dzest({$Popcelojums['ID']})'><i class='fas fa-trash'></i></button>";
                             }
                         echo "</div></div>";
                     }
@@ -64,7 +64,8 @@ require "Assets/header.php";
             
             </div>
 </section>
-</body>
 <?php
 require "Assets/footer.php";
 ?>
+
+</body>
