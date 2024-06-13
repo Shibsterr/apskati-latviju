@@ -5,21 +5,35 @@
         <div class="icon">
           <h3 style="font-weight: bold;">Tālrunis <i class="fas fa-phone"></i></h3>
           <ul>
+<<<<<<< HEAD
             <li><a href="#"><p>+371 27 832 221</p></a></li>
             <li><a href="#"><p>+371 28 001 924</p></a></li>
+=======
+            <li><a href="#" style="color:black;">+371 27 832 221</a></li>
+            <li><a href="#" style="color:black;">+371 28 001 924</a></li>
+>>>>>>> 5ea5b4438d524637238a467d34c0bfad8c5d7bd3
           </ul>
     </div>
     <div class="icon">
           <h3 style="font-weight: bold;">E-pasts <i class="fas fa-envelope"></i></h3>
           <ul>
+<<<<<<< HEAD
             <li><a href="#"><p>kudumsendijs@gmail.com</p></a></li>
             <li><a href="#"><p>ulfsssiksna@gmail.com</p></a></li>
+=======
+            <li><a href="#" style="color:black;">kudumsendijs@gmail.com</a></li>
+            <li><a href="#" style="color:black;">ulfsssiksna@gmail.com</a></li>
+>>>>>>> 5ea5b4438d524637238a467d34c0bfad8c5d7bd3
           </ul>
     </div>
     <div class="icon">
           <h3 style="font-weight: bold;">Adrese <i class="fas fa-home"></i></h3>
           <ul>
+<<<<<<< HEAD
             <li><a href="#" id="iela"><p>Latvija, Liepaja,<br>Lauku iela 33</p></a></li>
+=======
+            <li><a href="#" style="color:black;" id="iela">Latvija, Liepaja,<br>Lauku iela 33</a></li>
+>>>>>>> 5ea5b4438d524637238a467d34c0bfad8c5d7bd3
           </ul>
     </div>
         <div class="icon">

@@ -1138,6 +1138,7 @@
 [11-Jun-2024 14:32:19 Europe/Riga] PHP Notice:  Undefined variable: page in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/header.php on line 28
 [11-Jun-2024 14:32:19 Europe/Riga] PHP Notice:  Undefined variable: page in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/header.php on line 29
 [11-Jun-2024 14:32:19 Europe/Riga] PHP Notice:  Undefined index: pieteikties in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/pieteikums.php on line 7
+<<<<<<< HEAD
 [12-Jun-2024 09:19:15 Europe/Riga] PHP Notice:  Undefined variable: page in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/header.php on line 25
 [12-Jun-2024 09:19:15 Europe/Riga] PHP Notice:  Undefined variable: page in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/header.php on line 26
 [12-Jun-2024 09:19:15 Europe/Riga] PHP Notice:  Undefined variable: page in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/header.php on line 27
@@ -8123,3 +8124,5 @@
 [13-Jun-2024 01:42:25 Europe/Riga] PHP Notice:  Undefined variable: page in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/header.php on line 29
 [13-Jun-2024 02:39:34 Europe/Riga] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 159
 [13-Jun-2024 02:39:37 Europe/Riga] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home2/grobina1/public_html/3pt1/kudums/apskati_latviju/Assets/db.php on line 159
+=======
+>>>>>>> 5ea5b4438d524637238a467d34c0bfad8c5d7bd3
